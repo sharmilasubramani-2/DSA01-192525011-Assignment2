@@ -147,5 +147,5 @@ Changes are committed progressively, with meaningful commit messages correspondi
 
 ---
 
-*C++ Programming - Assignment 2*
+*DSA0111 OOPS - Assignment 2*
 *B.Tech - Artificial Intelligence and Machine Learning*
