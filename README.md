@@ -1,4 +1,4 @@
-# C++ Programming - Assignment 2
+# DSA0111 OOPS - Assignment 2
 
 ## 1. Assignment Overview
 
@@ -12,7 +12,7 @@ Each task is maintained in a separate directory containing its source files and 
 
 | Field | Details |
 |---|---|
-| Name | Sharmila Subramani |
+| Name | Sharmila S |
 | Register Number | 192525011 |
 | Programme | B.Tech - Artificial Intelligence and Machine Learning |
 | Department | Intelligence Systems |
