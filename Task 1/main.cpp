@@ -1,41 +1,80 @@
 #include <iostream>
 using namespace std;
 
-void callByValue(int x) {
-    x += 10;
-    cout << "Inside Call by Value: " << x << endl;
+void applyByValue(long long fee, int percent) {
+    fee -= fee * percent / 100;
+    cout << "Fee inside call by value: " << fee << endl;
 }
 
-void callByReference(int &x) {
-    x += 10;
-    cout << "Inside Call by Reference: " << x << endl;
+void applyByReference(long long &fee, int percent) {
+    fee -= fee * percent / 100;
 }
 
-void callByPointer(int *x) {
-    *x += 10;
-    cout << "Inside Call by Pointer: " << *x << endl;
+void applyByPointer(long long *fee, int percent) {
+    *fee -= *fee * percent / 100;
+}
+
+void change(int a, int &b, int *c) {
+    a += 10;
+    b += 10;
+    *c += 10;
+    (void)a;
+}
+
+int &bigger(int &p, int &q) {
+    return p > q ? p : q;
+}
+
+void show(int x, int y = 5, int z = 10) {
+    cout << x + y + z << ' ';
+}
+
+void applyConcession(long long &fee, int percent) {
+    fee -= fee * percent / 100;
 }
 
 int main() {
-    int a = 10;
-    int b = 10;
-    int c = 10;
+    cout << "HOSTEL FEE CONCESSION" << endl;
 
-    cout << "Initial Values:" << endl;
-    cout << "a = " << a << endl;
-    cout << "b = " << b << endl;
-    cout << "c = " << c << endl;
+    long long valueFee = 45000;
+    long long referenceFee = 45000;
+    long long pointerFee = 45000;
 
-    cout << "\nFunction Execution:" << endl;
+    cout << "Initial Fee: 45000" << endl;
 
-    callByValue(a);
-    callByReference(b);
-    callByPointer(&c);
+    applyByValue(valueFee, 10);
+    cout << "Stored Fee after Call by Value: " << valueFee << endl;
 
-    cout << "\nValues After Function Calls:" << endl;
-    cout << "Call by Value: " << a << endl;
-    cout << "Call by Reference: " << b << endl;
-    cout << "Call by Pointer: " << c << endl;
+    applyByReference(referenceFee, 15);
+    cout << "Stored Fee after Call by Reference: " << referenceFee << endl;
+
+    applyByPointer(&pointerFee, 25);
+    cout << "Stored Fee after Call by Pointer: " << pointerFee << endl;
+
+    cout << "\nPREDICT THE OUTPUT" << endl;
+
+    int a = 1, b = 2, c = 3;
+
+    change(a, b, &c);
+    cout << a << ' ' << b << ' ' << c << '\n';
+
+    bigger(a, c) = 100;
+    cout << a << ' ' << c << '\n';
+
+    show(1);
+    show(1, 2);
+    show(1, 2, 3);
+    cout << '\n';
+
+    cout << "\nCOMPLETE THE CODE" << endl;
+
+    long long hostelFee = 45000;
+
+    applyByValue(hostelFee, 10);
+    cout << "after call by value : " << hostelFee << '\n';
+
+    applyConcession(hostelFee, 10);
+    cout << "after call by reference: " << hostelFee << '\n';
 
     return 0;
 }
