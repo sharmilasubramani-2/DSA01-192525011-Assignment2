@@ -1,12 +1,12 @@
-# DSA0111 OOPS - Assignment 2
+# DSA0111 – OOPS | Assignment 2
 
 ## 1. Assignment Overview
 
-This repository contains the implementation, analysis, testing and documentation for Assignment 2 in C++ Programming.
+This repository contains the implementation, testing, analysis and documentation for Assignment 2 of the DSA0111 OOPS course.
 
-The assignment focuses on function mechanisms, references, function overloading, classes, static members, friend functions and object-oriented program design.
+The assignment covers function mechanisms, references, function overloading, classes, arrays, static members, friend functions, inline functions and object-oriented program design.
 
-Each task is maintained in a separate directory containing its source files and supporting documentation.
+The assignment is organized into seven independent tasks. Each task directory contains its implementation files, individual documentation and relevant execution evidence.
 
 ## 2. Student Information
 
@@ -14,17 +14,18 @@ Each task is maintained in a separate directory containing its source files and 
 |---|---|
 | Name | Sharmila S |
 | Register Number | 192525011 |
-| Programme | B.Tech - Artificial Intelligence and Machine Learning |
+| Programme | B.Tech – Artificial Intelligence and Machine Learning |
 | Department | Intelligence Systems |
+| Course Code | DSA0111 |
+| Course | OOPS |
 | Assignment | Assignment 2 |
-| Course | C++ Programming |
 
 ## 3. Learning Objectives
 
 The objectives of this assignment are to:
 
 - Understand call by value, call by reference and call by pointer.
-- Implement functions that return references.
+- Implement functions that return references and understand their associated risks.
 - Apply default arguments and function overloading.
 - Design classes using appropriate access specifiers.
 - Implement arrays within classes and arrays of objects.
@@ -38,29 +39,57 @@ The objectives of this assignment are to:
 ```text
 DSA01-192525011-Assignment2/
 |
+|-- .gitignore
 |-- README.md
 |
 |-- Task 1/
+|   |-- main.cpp
 |   |-- README.md
+|   |-- screenshots/
+|       |-- task1_execution.png
 |
 |-- Task 2/
+|   |-- main.cpp
+|   |-- dangling_reference.cpp
 |   |-- README.md
+|   |-- screenshots/
+|       |-- task2_compiler_warning.png
+|       |-- task2_execution.png
 |
 |-- Task 3/
+|   |-- main.cpp
 |   |-- README.md
+|   |-- screenshots/
+|       |-- task3_execution.png
 |
 |-- Task 4/
+|   |-- main.cpp
 |   |-- README.md
+|   |-- screenshots/
+|       |-- task4_execution.png
 |
 |-- Task 5/
+|   |-- main.cpp
 |   |-- README.md
+|   |-- screenshots/
+|       |-- task5_execution.png
 |
 |-- Task 6/
+|   |-- main.cpp
+|   |-- benchmark.cpp
 |   |-- README.md
+|   |-- screenshots/
+|       |-- task6_benchmark.png
+|       |-- task6_execution.png
 |
 |-- Task 7/
+    |-- main.cpp
     |-- README.md
+    |-- screenshots/
+        |-- task7_comparison.png
 ```
+
+**Note:** Compiled executable files (`.exe`) are excluded from version control using `.gitignore`. Source code, documentation and screenshots are maintained in the repository.
 
 ## 5. Task Overview
 
@@ -77,8 +106,6 @@ DSA01-192525011-Assignment2/
 
 ## 6. Development Environment
 
-The following development tools and compiler versions are used for this assignment.
-
 | Component | Details |
 |---|---|
 | Operating System | Windows |
@@ -92,25 +119,35 @@ The following development tools and compiler versions are used for this assignme
 
 ## 7. Compilation and Execution
 
-The programs are compiled using the GNU C++ compiler with the C++17 language standard.
+The programs are compiled using the GNU C++ compiler with the C++17 language standard and additional warning flags.
 
 ### Compilation
 
 ```powershell
-g++ -std=c++17 -Wall -Wextra program.cpp -o program.exe
+g++ -std=c++17 -Wall -Wextra -pedantic main.cpp -o main.exe
+```
+
+For example, to compile a program inside Task 1:
+
+```powershell
+cd "Task 1"
+g++ -std=c++17 -Wall -Wextra -pedantic main.cpp -o main.exe
 ```
 
 ### Execution
 
 ```powershell
-.\program.exe
+.\main.exe
 ```
 
-Replace `program.cpp` with the appropriate source filename before compilation.
+For Task 6, the benchmark program can be compiled separately:
+
+```powershell
+g++ -std=c++17 -O0 benchmark.cpp -o benchmark_O0.exe
+g++ -std=c++17 -O2 benchmark.cpp -o benchmark_O2.exe
+```
 
 ### Compiler Verification
-
-To verify the installed compiler version:
 
 ```powershell
 g++ --version
@@ -118,11 +155,13 @@ g++ --version
 
 ## 8. Documentation and Validation
 
-Each task includes relevant technical documentation covering the following aspects, as applicable:
+Each task includes an individual README file documenting the relevant implementation and analysis.
+
+Documentation covers the following aspects, as applicable:
 
 - Aim and problem statement
 - Concepts and techniques used
-- Algorithm and implementation details
+- Implementation approach
 - Output prediction and reasoning
 - Actual execution results
 - Test cases and validation
@@ -131,21 +170,23 @@ Each task includes relevant technical documentation covering the following aspec
 - Design decisions and justification
 - Conclusion
 
-Each program will be compiled, executed and validated before its results are documented. Actual execution evidence will be maintained within the corresponding task directory.
+Execution screenshots are maintained in the corresponding task directories as supporting evidence.
 
 ## 9. Version Control
 
-Git is used to track the development and implementation of this assignment.
+Git is used to maintain the development history of this assignment.
 
-Changes are committed progressively, with meaningful commit messages corresponding to the completed tasks. This maintains a clear and traceable development history.
+Changes are tracked through task-wise commits with meaningful commit messages. The repository maintains source files, documentation and execution evidence while excluding compiled executable files.
 
 ## 10. Repository Information
 
 **Repository Name:** DSA01-192525011-Assignment2
 
+**Course:** DSA0111 – OOPS
+
 **Platform:** GitHub
 
 ---
 
-*DSA0111 OOPS - Assignment 2*
-*B.Tech - Artificial Intelligence and Machine Learning*
+*DSA0111 – OOPS | Assignment 2*
+*B.Tech – Artificial Intelligence and Machine Learning*

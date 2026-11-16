@@ -81,4 +81,28 @@ This makes the circular buffer easier to maintain and extend.
 
 A `std::deque` can also maintain the latest 10 transactions.
 
-When the number of transactions reaches 10, the oldest transaction can be removed using `pop_front()`, and the
+When the number of transactions reaches 10, the oldest transaction can be removed using `pop_front()`, and the new transaction can be added using `push_back()`.
+
+| Feature | Fixed-Size Array | std::deque |
+|---|---|---|
+| Capacity | Fixed | Dynamic |
+| Removing oldest transaction | Requires index management or shifting | `pop_front()` |
+| Adding new transaction | Insert using circular index | `push_back()` |
+| Memory management | Fixed allocation | Dynamic allocation |
+
+The fixed-size circular buffer is selected for this implementation because it provides predictable memory usage and constant-time insertion without shifting existing transactions.
+
+## Complexity Analysis
+
+| Operation | Time Complexity |
+|---|---|
+| Deposit | O(1) |
+| Withdraw | O(1) |
+| Insert transaction | O(1) |
+| Display mini-statement | O(k) |
+
+Here, `k` represents the number of stored transactions, with a maximum capacity of 10.
+
+## Result
+
+The `SavingsAccount` class successfully maintains the latest 10 transactions using a private fixed-size array and circular buffer. The implementation demonstrates encapsulation, array management and efficient transaction history updates.

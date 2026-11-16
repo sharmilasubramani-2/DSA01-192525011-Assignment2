@@ -94,4 +94,12 @@ Execution times may vary depending on hardware, compiler version, optimization s
 | Operation | Time Complexity |
 |---|---|
 | minutesBetween() | O(1) |
-|
+|| earlier() | O(1) |
+| Benchmark execution | O(n) |
+| Auxiliary space | O(1) |
+
+Here, `n` represents the number of function calls performed by the benchmark.
+
+## Result
+
+The `Time` class successfully uses friend functions to access private data members and perform time comparisons. The benchmark demonstrates how compiler optimization can influence inline and non-inline function performance. Both implementations produce the same result, while their execution times vary with optimization settings.
